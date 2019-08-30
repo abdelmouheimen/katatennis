@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
+import katatennis.model.Player;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,5 +22,10 @@ public class Match {
 		this.set = set;
 	}
 
-	
+	public Player getWinner() {
+		if (this.set.getGame().getPlayer1().getNbrSetWon()>this.set.getGame().getPlayer2().getNbrSetWon())
+			return this.set.getGame().getPlayer1();
+		else
+			return this.set.getGame().getPlayer2();
+	}
 }
