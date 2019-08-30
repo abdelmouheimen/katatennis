@@ -24,6 +24,26 @@ public class Player {
 		this.nbrGameWon = 0;
 	}
 	
+	public void winPoint(){
+		this.gameScore++;
+	}
+	
+	public void winTieBreakPoint() {
+		this.tieBreakPoint++;
+	}
+
+	public int getRealScore() {
+		switch (this.gameScore) {
+		case 0:
+			return 0;
+		case 1:
+			return 15;
+		case 2:
+			return 30;
+		default:
+			return 40;
+		}
+	}
 	
 	@Override
 	public String toString() {
