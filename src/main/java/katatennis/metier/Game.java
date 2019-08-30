@@ -93,7 +93,7 @@ public class Game {
 	public void playGame() {
 		while (!this.isGameEnded) {
 			whoIsThePlayerWinPoint();
-			// TODO logger.info(getScore());
+			logger.info(getScore());
 		}
 		this.setGameEnded(false);
 	}
@@ -101,11 +101,75 @@ public class Game {
 	public void playTieBreakGame() {
 		while (!this.isTieBreakEnded) {
 			WhoIsThePlayerWinTieBreak();
-			//TODO logger.info(getTieBreakScore());
+			logger.info(getTieBreakScore());
 		}
 		this.setTieBreakEnded(false);
 	}
 
+	//get Score for a tie break game
+		public String getTieBreakScore() {
+			if(player1.getTieBreakPoint()>=7 && player2.getTieBreakPoint()<=player1.getTieBreakPoint()-2) {
+				winTieBreakGame(player1);
+				return "_________________" + player1.getName() + " won the Tie Break game" + "_________________ \n\n\n";
+			}else if(player2.getTieBreakPoint()>=7 && player1.getTieBreakPoint()<=player2.getTieBreakPoint()-2) {
+				winTieBreakGame(player2);
+				return "_________________" + player2.getName() + " won the Tie Break game" + "_________________ \n\n\n";
+			}
+			return player1.getTieBreakPoint() + " - " + player2.getTieBreakPoint();
+		}
 
+		//get Score for a normal game
+		public String getScore() {
+			// Equality
+			if (player1.getGameScore() == player2.getGameScore())
+				switch (player1.getGameScore()) {
+				case 0:
+					return "0 - 0";
+				case 1:
+					return "15 - 15";
+				case 2:
+					return "30 - 30";
+				case 3:
+					return "40 - 40";
+				case 4:
+					updateScoreAfterDeuce();
+					return "40 - 40";
+
+				}
+			// Deuce
+			if (player1.getGameScore() >= 3 && player2.getGameScore() >= 3) {
+				// Avantage to player1
+				if (player1.getGameScore() == 4 && player2.getGameScore() == 3)
+					return "AVANTAGE " + player1.getName();
+				// Avantage to player2
+				if (player1.getGameScore() == 3 && player2.getGameScore() == 4)
+					return "AVANTAGE " + player2.getName();
+				// Point + Avantage Player1
+				if (player1.getGameScore() == 5 && player2.getGameScore() == 3) {
+					winGame(player1);
+					return "_________________" + player1.getName() + " won the game" + "_________________ \n\n\n";
+				}
+				// Point + Avantage Player2
+				if (player1.getGameScore() == 3 && player2.getGameScore() == 5) {
+					winGame(player2);
+					return "_________________" + player2.getName() + " won the game" + "_________________ \n\n\n";
+				}
+			} else {
+				if (player1.getGameScore() == 4) {
+					winGame(player1);
+					return "_________________" + player1.getName() + " won the game" + "_________________ \n\n\n";
+				}
+				if (player2.getGameScore() == 4) {
+					winGame(player2);
+					return "_________________" + player2.getName() + " won the game" + "_________________ \n\n\n";
+				}
+			}
+			return player1.getRealScore() + " - " + player2.getRealScore();
+		}
+
+		public void updateScoreAfterDeuce() {
+			player1.setGameScore(3);
+			player2.setGameScore(3);
+		}
 
 }
