@@ -24,7 +24,7 @@ public class SetTest {
 	}
 	
 	@Test
-	public void initializePlayersTest() {
+	public void playSetTest() {
 		set.playSet();
 		assertNotNull(set.getScore());
 		assertEquals(0, player1.getNbrGameWon());
