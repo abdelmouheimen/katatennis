@@ -22,4 +22,5 @@ public class Game {
 		this.isGameEnded = false;
 		this.isTieBreakEnded = false;
 	}
+
 }
