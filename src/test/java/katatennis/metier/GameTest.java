@@ -81,6 +81,22 @@ public class GameTest {
 		game.playTieBreakGame();
 		assertEquals(false, game.isTieBreakEnded());
 	}
+	
+	@Test
+	public void getTieBreakScoreTest() {
+		
+		this.player1.setTieBreakPoint(7);
+		this.player2.setTieBreakPoint(5);
+		assertEquals("_________________" + player1.getName() + " won the Tie Break game" + "_________________ \n\n\n", game.getTieBreakScore());
+	
+		this.player1.setTieBreakPoint(5);
+		this.player2.setTieBreakPoint(7);
+		assertEquals("_________________" + player2.getName() + " won the Tie Break game" + "_________________ \n\n\n", game.getTieBreakScore());
+
+		this.player1.setTieBreakPoint(5);
+		this.player2.setTieBreakPoint(5);
+		assertEquals(player1.getTieBreakPoint() + " - " + player2.getTieBreakPoint(), game.getTieBreakScore());
+	}
 
 	@Test
 	public void getScoreTest() {
