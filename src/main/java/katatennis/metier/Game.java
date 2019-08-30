@@ -1,6 +1,8 @@
 package katatennis.metier;
 
 
+import java.util.Random;
+
 import org.apache.log4j.Logger;
 
 import katatennis.model.Player;
@@ -36,5 +38,58 @@ public class Game {
 		player2.setNbrSetWon(0);
 		player.setNbrGameWon(player.getNbrGameWon() + 1);
 	}
+	
+
+	public void initializeNbrGameWon() {
+		player1.setNbrGameWon(0);
+		player2.setNbrGameWon(0);
+	}
+
+	public void initializeGameScore() {
+		player1.setGameScore(0);
+		player2.setGameScore(0);
+	}
+
+	public void whoIsThePlayerWinPoint() {
+		int num = 0;
+		/************* the user set a game result ********/
+//		while(num!=1 && num!=2) {
+//			System.out.println("Who win a point Player 1 or Player 2 (1 for player 1 and 2 for player 2)");
+//			Scanner in = new Scanner(System.in);
+//			num = in.nextInt();
+//		}
+		Random random = new Random();
+		num = random.nextInt(2) + 1;
+		switch (num) {
+		case 1:
+			this.player1.winPoint();
+			break;
+		case 2:
+			this.player2.winPoint();
+			break;
+		}
+	}
+
+	public void WhoIsThePlayerWinTieBreak() {
+		int num = 0;
+		/************* the user set a game result ********/
+//		while(num!=1 && num!=2) {
+//			System.out.println("Who win a point Player 1 or Player 2 (1 for player 1 and 2 for player 2)");
+//			Scanner in = new Scanner(System.in);
+//			num = in.nextInt();
+//		}
+		Random random = new Random();
+		num = random.nextInt(2) + 1;
+		switch (num) {
+		case 1:
+			this.player1.winTieBreakPoint();
+			break;
+		case 2:
+			this.player2.winTieBreakPoint();
+			break;
+		}
+	}
+
+
 
 }
