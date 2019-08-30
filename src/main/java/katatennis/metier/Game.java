@@ -23,4 +23,18 @@ public class Game {
 		this.isTieBreakEnded = false;
 	}
 
+	public void winGame(Player player) {
+		this.isGameEnded = true;
+		player1.setGameScore(0);
+		player2.setGameScore(0);
+		player.setNbrGameWon(player.getNbrGameWon() + 1);
+	}
+
+	public void winTieBreakGame(Player player) {
+		this.isTieBreakEnded = true;
+		player1.setNbrSetWon(0);
+		player2.setNbrSetWon(0);
+		player.setNbrGameWon(player.getNbrGameWon() + 1);
+	}
+
 }
