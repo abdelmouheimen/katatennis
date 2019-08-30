@@ -15,4 +15,10 @@ public class Set {
 	private String score;
 	private Game game;
 
+	public Set(Game game) {
+		this.score = "0 - 0";
+		this.game = game;
+	}
+
+
 }
