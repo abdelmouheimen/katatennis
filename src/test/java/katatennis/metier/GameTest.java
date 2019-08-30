@@ -38,6 +38,22 @@ public class GameTest {
 		assertEquals(0, player1.getNbrSetWon());
 		assertEquals(7, player1.getNbrGameWon());
 	}
+	
+	
+	@Test
+	public void initializeNbrGameWonTest() {
+		game.initializeNbrGameWon();
+		assertEquals(0, player2.getNbrGameWon());
+		assertEquals(0, player1.getNbrGameWon());
+	}
+	
+	@Test
+	public void initializeGameScoreTest() {
+		game.initializeGameScore();
+		assertEquals(0, player2.getGameScore());
+		assertEquals(0, player1.getGameScore());
+	}
+
 
 	@Test
 	public void getScoreTest() {
