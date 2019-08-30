@@ -15,5 +15,11 @@ public class Game {
 	private Player player2;
 	private boolean isGameEnded;
 	private boolean isTieBreakEnded;
-
+	
+	public Game(Player p1, Player p2) {
+		this.player1 = p1;
+		this.player2 = p2;
+		this.isGameEnded = false;
+		this.isTieBreakEnded = false;
+	}
 }
