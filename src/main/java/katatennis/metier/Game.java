@@ -27,8 +27,7 @@ public class Game {
 
 	public void winGame(Player player) {
 		this.isGameEnded = true;
-		player1.setGameScore(0);
-		player2.setGameScore(0);
+		this. initializeGameScore();
 		player.setNbrGameWon(player.getNbrGameWon() + 1);
 	}
 
