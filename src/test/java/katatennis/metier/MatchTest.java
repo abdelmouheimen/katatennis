@@ -1,11 +1,13 @@
 package katatennis.metier;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import katatennis.model.Player;
+import kattatennis.metier.Match;
 
 
 public class MatchTest {
@@ -34,6 +36,16 @@ public class MatchTest {
 		this.set.getGame().getPlayer2().setNbrSetWon(3);
 		this.set.getGame().getPlayer1().setNbrSetWon(2);
 		assertEquals(player2 , match.getWinner());
-
 	}
+	
+	@Test
+	public void playMatchTest() {
+		Match match = new Match(this.set);
+		this.set.getGame().getPlayer1().setNbrSetWon(2);
+		this.set.getGame().getPlayer2().setNbrSetWon(2);
+		match.playMatch();
+		assertNotEquals(0 , match.getSets().size());
+	}
+	
+
 }
