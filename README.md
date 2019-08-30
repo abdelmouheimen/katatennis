@@ -20,4 +20,4 @@
    &nbsp;&nbsp;&nbsp;   * TestSomeScenarios to test some real tennis scenarios.  
    
   -I have integrated the EclEmma plugin into eclipse to calculate the test coverage which is 87,1% for this application.  
-  ![Alt text](/src/main/resources/testcoverage)  
+  ![Alt text](/src/main/resources/testcoverage.PNG)  
