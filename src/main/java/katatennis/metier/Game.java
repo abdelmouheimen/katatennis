@@ -93,7 +93,7 @@ public class Game {
 	public void playGame() {
 		while (!this.isGameEnded) {
 			whoIsThePlayerWinPoint();
-		//TODO	logger.info(getScore());
+			// TODO logger.info(getScore());
 		}
 		this.setGameEnded(false);
 	}
@@ -101,7 +101,7 @@ public class Game {
 	public void playTieBreakGame() {
 		while (!this.isTieBreakEnded) {
 			WhoIsThePlayerWinTieBreak();
-		//TODO	logger.info(getTieBreakScore());
+			//TODO logger.info(getTieBreakScore());
 		}
 		this.setTieBreakEnded(false);
 	}

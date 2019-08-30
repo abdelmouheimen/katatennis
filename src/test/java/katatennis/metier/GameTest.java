@@ -83,6 +83,13 @@ public class GameTest {
 	}
 	
 	@Test
+	public void updateScoreAfterDeuceTest() {
+		game.updateScoreAfterDeuce();
+		assertEquals(3, player1.getGameScore());
+		assertEquals(3, player2.getGameScore());
+	}
+	
+	@Test
 	public void getTieBreakScoreTest() {
 		
 		this.player1.setTieBreakPoint(7);
