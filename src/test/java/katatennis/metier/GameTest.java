@@ -54,6 +54,21 @@ public class GameTest {
 		assertEquals(0, player1.getGameScore());
 	}
 
+	@Test
+	public void whoIsThePlayerWinPointTest() {
+		player1.setGameScore(2);
+		player2.setGameScore(2);
+		game.whoIsThePlayerWinPoint();
+		assertEquals(5, player1.getGameScore()+player2.getGameScore());
+	}
+	
+	@Test
+	public void WhoIsThePlayerWinTieBreakTest() {
+		player1.setTieBreakPoint(6);
+		player2.setTieBreakPoint(6);
+		game.WhoIsThePlayerWinTieBreak();
+		assertEquals(13, player1.getTieBreakPoint()+player2.getTieBreakPoint());
+	}
 
 	@Test
 	public void getScoreTest() {
