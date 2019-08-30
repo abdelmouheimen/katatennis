@@ -1,5 +1,5 @@
 # katatennis
--This KataTennis application is an application to show the score of two players  match and determine the winner.  
+-KataTennis is an application to show the score of two players  match and determine the winner.  
 -this application is composed of four main classes:  
    &nbsp;&nbsp;&nbsp;   * "Player" : a player of tennis match.  
    &nbsp;&nbsp;&nbsp;   * "Match"  : composed of many Sets.  
