@@ -28,4 +28,13 @@ public class Match {
 		else
 			return this.set.getGame().getPlayer2();
 	}
+	
+	public void playMatch() {
+		int index=0;
+		while (this.set.getGame().getPlayer1().getNbrSetWon() < 3 && this.set.getGame().getPlayer2().getNbrSetWon() < 3) {
+			logger.info("********************* SET:" + String.valueOf(++index) + " *********************");
+			this.set.playSet();
+			sets.put("SET" + String.valueOf(index)+": ", this.set.getScore());
+		}
+	}
 }

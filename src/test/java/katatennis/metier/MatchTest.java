@@ -7,8 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import katatennis.model.Player;
-import kattatennis.metier.Match;
-
 
 public class MatchTest {
 	
