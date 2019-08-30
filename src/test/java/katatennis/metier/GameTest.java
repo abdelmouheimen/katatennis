@@ -69,6 +69,18 @@ public class GameTest {
 		game.WhoIsThePlayerWinTieBreak();
 		assertEquals(13, player1.getTieBreakPoint()+player2.getTieBreakPoint());
 	}
+	
+	@Test
+	public void playGameTest() {
+		game.playGame();
+		assertEquals(false, game.isGameEnded());
+	}
+	
+	@Test
+	public void playTieBreakGameTest() {
+		game.playTieBreakGame();
+		assertEquals(false, game.isTieBreakEnded());
+	}
 
 	@Test
 	public void getScoreTest() {
