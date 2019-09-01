@@ -12,7 +12,7 @@
       
   -The ExampleKataTennis is a simulation of tennis match with random values.  
     
- I Have used the TDD(Test Driven Development) to develop this application. the test classes are:  
+ -I Have used the TDD(Test Driven Development) methodology to develop this application. The test classes are:  
    &nbsp;&nbsp;&nbsp;   * PlayerTest to test Player class.  
    &nbsp;&nbsp;&nbsp;   * GameTest to test Game class.  
    &nbsp;&nbsp;&nbsp;   * SetTest to test Set class.  
