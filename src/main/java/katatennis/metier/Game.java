@@ -33,8 +33,7 @@ public class Game {
 
 	public void winTieBreakGame(Player player) {
 		this.isTieBreakEnded = true;
-		player1.setNbrSetWon(0);
-		player2.setNbrSetWon(0);
+		initializeGameScore();
 		player.setNbrGameWon(player.getNbrGameWon() + 1);
 	}
 	

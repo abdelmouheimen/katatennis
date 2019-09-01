@@ -34,8 +34,8 @@ public class GameTest {
 	public void winTieBreakGameTest() {
 		player1.setNbrGameWon(6);
 		game.winTieBreakGame(player1);
-		assertEquals(0, player2.getNbrSetWon());
-		assertEquals(0, player1.getNbrSetWon());
+		assertEquals(0, player2.getGameScore());
+		assertEquals(0, player1.getGameScore());
 		assertEquals(7, player1.getNbrGameWon());
 	}
 	

@@ -41,7 +41,7 @@ public class Set {
 
 		if (this.getGame().getPlayer1().getNbrGameWon() > this.game.getPlayer2().getNbrGameWon())
 			this.game.getPlayer1().setNbrSetWon(this.game.getPlayer1().getNbrSetWon() + 1);
-		else
+		else if(this.getGame().getPlayer1().getNbrGameWon() < this.game.getPlayer2().getNbrGameWon())
 			this.game.getPlayer2().setNbrSetWon(this.game.getPlayer2().getNbrSetWon() + 1);
 
 		this.score = String.valueOf(this.game.getPlayer1().getNbrGameWon()) + " - "
